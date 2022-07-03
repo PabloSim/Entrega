@@ -1,5 +1,5 @@
 from unicodedata import name
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 
 from products.models import Products
@@ -9,6 +9,9 @@ from products.forms import Categoria_form
 
 # Create your views here.
 def products(request):
+    if not request.user:
+        return redirect('/accounts/iniciar')
+
     #print(request.method)
     productos = Products.objects.all()
     context = {'productos':productos}
@@ -59,4 +62,3 @@ def search_product_view(request):
     products = Products.objects.filter(name__contains = request.GET['search'])
     context = {'products':products}
     return render(request, 'search_product.html', context = context)
-

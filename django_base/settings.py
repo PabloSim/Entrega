@@ -46,7 +46,8 @@ CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 MY_APPS = [
-    'products'
+    'products',
+    'accounts'
 ]
 
 THIRD_APPS = [

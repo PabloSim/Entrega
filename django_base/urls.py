@@ -15,5 +15,6 @@ urlpatterns = [
     path('fecha_actual/', fecha_actual, name = 'fecha_actual'),
     path('probando-template/', probando_template, name = 'probando_template'),
 
-    path('products/', include('products.urls'))
+    path('products/', include('products.urls')),
+    path('accounts/', include('accounts.urls')),
 ]
